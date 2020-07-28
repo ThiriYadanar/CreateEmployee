@@ -18,7 +18,6 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService service; 
 	
-	
 	@RequestMapping("/")
 	public String viewHomePage(Model model) {
 		List<Employee> listEmployee = service.listAll();
