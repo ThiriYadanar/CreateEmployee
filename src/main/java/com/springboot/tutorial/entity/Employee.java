@@ -34,13 +34,11 @@ public class Employee {
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name = "joiningDate")
-//	@JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date joiningDate;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name = "retiringDate")
-//	@JsonFormat(shape=JsonFormat.Shape.STRING,pattern="yyyy-MM-dd")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date retiringDate;
 	
