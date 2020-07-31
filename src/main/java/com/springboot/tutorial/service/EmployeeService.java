@@ -6,8 +6,6 @@ public interface EmployeeService {
 
 	List<Employee> listAll();
 
-	List<Employee> getSearchData(String search_data);
-
 	void save(Employee employee);
 
 }

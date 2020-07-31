@@ -18,11 +18,10 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService service; 
 	
-	
 	@RequestMapping("/")
 	public String viewHomePage(Model model) {
-		List<Employee> listEmployee = service.listAll();
-		model.addAttribute("listAll", listEmployee);
+		List<Employee> employeeList = service.listAll();
+		model.addAttribute("listAll", employeeList);
 		return "index";
 	}
 	
@@ -36,20 +35,9 @@ public class EmployeeController {
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String saveEmployee(@ModelAttribute("employee") Employee employee,Model model,BindingResult result) {
 		service.save(employee);
-		List<Employee> listAll = service.listAll();
-		model.addAttribute("listAll", listAll);
+		List<Employee> employeeList = service.listAll();
+		model.addAttribute("listAll", employeeList);
 		model.addAttribute("employeeAttr",employee);
 		return "index";
 	}
-	
-	
-	
-	@RequestMapping(value = "/search")
-	public String recoverPass(@RequestParam("search_data") String search_data, Model model) {
-		List<Employee> listAll = service.getSearchData(search_data);
-		model.addAttribute("listAll", listAll);
-		return "redirect:/";
-
-	}
-
 }
