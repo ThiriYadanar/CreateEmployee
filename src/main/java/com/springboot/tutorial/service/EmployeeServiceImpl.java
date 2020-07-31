@@ -23,9 +23,4 @@ public class EmployeeServiceImpl implements EmployeeService {
 		repo.save(emp);
 	}
 
-	@Override
-	public List<Employee> getSearchData(String search_data) {
-		List<Employee> empList=repo.findAll();
-		return empList;
-	}
 }
